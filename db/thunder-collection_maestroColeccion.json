@@ -1,0 +1,75 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "maestroColeccion",
+    "dateExported": "2024-02-14T23:11:36.676Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d36c2136-e482-4154-8182-1ad0bb2fc482",
+            "colId": "efea9b4e-a5d0-489c-b1e7-6b4d8a3d22fe",
+            "containerId": "",
+            "name": "maestroPost",
+            "url": "http://localhost:3000/api/maestros",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-14T22:19:08.105Z",
+            "modified": "2024-02-14T22:53:07.690Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Palma\",\n  \"correo\": \"Palma@kinal.edu.gt\",\n  \"password\": \"321236\",\n  \"curso\": \"Gastronomia\",\n  \"role\": \"TEACHER_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "866c757c-cb23-44d1-a00e-85cd53ae3f3b",
+            "colId": "efea9b4e-a5d0-489c-b1e7-6b4d8a3d22fe",
+            "containerId": "",
+            "name": "maestroGet",
+            "url": "http://localhost:3000/api/maestros",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-14T22:45:40.584Z",
+            "modified": "2024-02-14T22:45:47.222Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7752fe63-fece-4fb5-8212-c0dc987b6ca8",
+            "colId": "efea9b4e-a5d0-489c-b1e7-6b4d8a3d22fe",
+            "containerId": "",
+            "name": "maestroById",
+            "url": "http://localhost:3000/api/maestros/65cd44537a82743ca587af0b",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-14T22:52:09.870Z",
+            "modified": "2024-02-14T22:53:17.679Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b9d8ff8d-82b1-4f3d-bbd6-fbdb0fb0ece6",
+            "colId": "efea9b4e-a5d0-489c-b1e7-6b4d8a3d22fe",
+            "containerId": "",
+            "name": "maestroPut",
+            "url": "http://localhost:3000/api/maestros/65cd44537a82743ca587af0b",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-14T23:06:14.659Z",
+            "modified": "2024-02-14T23:09:08.460Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"mayen\",\n  \"correo\": \"mayen@kinal.edu.gt\",\n  \"password\": \"132456\",\n  \"role\": \"STUDENT_ROLE\",\n  \"curso\": \"literatura\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
