@@ -28,24 +28,37 @@ const getAlumnoById = async (req, res) =>{
     });
 }
 
-const putAlumno = async (req, res = response) =>{
-    const {id} = req.params;
-    const {_id, password, correo, curso, role, ...resto } = req.body;
+const putAlumno = async (req, res = response) => {
+    const { id } = req.params;
+    const { _id, password, ...resto } = req.body; // Asegúrate de incluir password aquí
 
-    if(password){
-        const salt = bcryptjs.getSaltSync();
+    if (password) {
+        const salt = bcryptjs.genSaltSync();
         resto.password = bcryptjs.hashSync(password, salt);
     }
 
     await Alumno.findByIdAndUpdate(id, resto);
 
-    const alumno = Alumno.findOne({id});
+    const alumno = await Alumno.findOne({ _id: id }); // Cambia id por _id
 
     res.status(200).json({
-        msg: 'se actualizo su perfil',
+        msg: 'Se actualizó su perfil',
         alumno
     });
 }
+
+const alumnoDelete = async (req, res) =>{
+    const {id} = req.params;
+    const alumno = await Alumno.findByIdAndUpdate(id, {estado: false}); 
+    const alumnoAutenticado = req.alumno;
+
+    res.status(200).json({
+        msg: 'se elimino su perfil',
+        alumno,
+        alumnoAutenticado
+    });
+}
+
 
 
 const alumnoPost = async (req, res) =>{
@@ -68,5 +81,6 @@ module.exports = {
     alumnoGet,
     getAlumnoById,
     alumnoPost,
-    putAlumno
+    putAlumno,
+    alumnoDelete
 }
