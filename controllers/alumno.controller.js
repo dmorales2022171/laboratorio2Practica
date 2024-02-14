@@ -28,12 +28,32 @@ const getAlumnoById = async (req, res) =>{
     });
 }
 
+const putAlumno = async (req, res = response) =>{
+    const {id} = req.params;
+    const {_id, password, correo, curso, role, ...resto } = req.body;
+
+    if(password){
+        const salt = bcryptjs.getSaltSync();
+        resto.password = bcryptjs.hashSync(password, salt);
+    }
+
+    await Alumno.findByIdAndUpdate(id, resto);
+
+    const alumno = Alumno.findOne({id});
+
+    res.status(200).json({
+        msg: 'se actualizo su perfil',
+        alumno
+    });
+}
+
+
 const alumnoPost = async (req, res) =>{
     const {nombre, correo, password, role, curso} = req.body;
     const alumno = new Alumno({nombre, correo, password, role, curso});
 
-    const salt = bcryptjs.getSaltSync();
-    alumno.password = bcryptjs.hasSync(password, salt);
+    const salt = bcryptjs.genSaltSync();
+    alumno.password = bcryptjs.hashSync(password, salt);
 
     await alumno.save();
 
@@ -47,5 +67,6 @@ const alumnoPost = async (req, res) =>{
 module.exports = {
     alumnoGet,
     getAlumnoById,
-    alumnoPost
+    alumnoPost,
+    putAlumno
 }

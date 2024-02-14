@@ -1,16 +1,12 @@
 const { Router } = require('express');
 const { check } = require('express-validator')
+const { validarCampos } = require('../middlewares/validar-campos')
+const {alumnoPost, putAlumno, getAlumnoById, alumnoGet} = require('../controllers/alumno.controller');
+const { esRoleValido, existenteEmail, existeAlumnoById} = require('../helpers/db-validators');
 
 const router = Router();
 
-const {validarCampos} = require('../middlewares/validar-campos')
-
-const {
-    alumnoPost,
- } = require('../controllers/alumno.controller');
-const { esRoleValido, existenteEmail } = require('../helpers/db-validators');
-
-
+router.get("/", alumnoGet);
 
 router.post(
     "/",
@@ -23,4 +19,4 @@ router.post(
         validarCampos,
     ], alumnoPost);
 
-module.exports = router;
+module.exports = router; 

@@ -1,0 +1,42 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "alumnoColeccion",
+    "dateExported": "2024-02-14T09:17:43.873Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "96c46404-7f3d-4e54-acdf-4c674103c1dc",
+            "colId": "d8b94dcd-e0e6-4e9b-b747-330d889936d9",
+            "containerId": "",
+            "name": "post Alumno",
+            "url": "http://localhost:3000/api/alumnos",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-14T05:23:04.681Z",
+            "modified": "2024-02-14T05:47:26.199Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Carlos Juarez\",\n  \"correo\": \"cJuarez-2017159@kina.edu.gt\",\n  \"password\": \"258924\",\n  \"role\": \"STUDENT_ROLE\",\n  \"curso\": \"Taller\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "10cea1f3-9fd6-456e-bf43-c24d063d0a10",
+            "colId": "d8b94dcd-e0e6-4e9b-b747-330d889936d9",
+            "containerId": "",
+            "name": "get alumno",
+            "url": "http://localhost:3000/api/alumnos",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-14T05:47:57.170Z",
+            "modified": "2024-02-14T05:48:06.844Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
