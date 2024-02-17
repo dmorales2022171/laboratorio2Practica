@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { existenteEmail, existeMaestroById, esRoleValido } = require('../helpers/db-validators');
-const { maestroPost, maestroGet, getMaestroById, putMaestro } = require('../controllers/maestro.controller');
+const { maestroPost, maestroGet, getMaestroById, putMaestro, maestroDelete } = require('../controllers/maestro.controller');
 
 const router = Router();
 
@@ -39,6 +39,15 @@ router.post(
         check("role").custom(esRoleValido),
         validarCampos,
     ], maestroPost
-)
+);
+
+router.delete(
+    "/:id",
+    [
+        check('id', 'no es un id valido').isMongoId(),
+        check('id').custom(existeMaestroById),
+        validarCampos
+    ], maestroDelete
+);
 
 module.exports = router;
