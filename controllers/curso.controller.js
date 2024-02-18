@@ -51,9 +51,10 @@ const cursoDelete = async (req, res) => {
     })
 }
 
+
 const cursoPost = async (req, res) => {
-    const { nombre, descripcion } = req.body;
-    const curso = new Curso({ nombre, descripcion });
+    const { nombre, descripcion, maestro } = req.body;
+    const curso = new Curso({ nombre, descripcion, maestro });
 
     await curso.save();
     res.status(202).json({

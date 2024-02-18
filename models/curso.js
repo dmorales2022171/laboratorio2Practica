@@ -1,13 +1,18 @@
-const { Schema , model } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const cursoSchema = Schema({
-    nombre:{
+    nombre: {
         type: String,
         required: [true, 'el nombre del curso es obligatorio']
     },
     descripcion: {
         type: String,
-        requierd: [true, 'la descripcion es obligatoria']
+        required: [true, 'la descripcion es obligatoria']
+    },
+    maestro: {
+        type: Schema.Types.ObjectId,
+        ref: 'Maestro',
+        required: [true, 'el profesor es obligatorio']
     },
     estado: {
         type: Boolean,
@@ -15,4 +20,4 @@ const cursoSchema = Schema({
     }
 });
 
-module.exports = model ('Curso', cursoSchema);
+module.exports = model('Curso', cursoSchema);

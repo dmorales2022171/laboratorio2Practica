@@ -3,6 +3,8 @@ const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { existenteEmail, existeMaestroById, esRoleValido } = require('../helpers/db-validators');
 const { maestroPost, maestroGet, getMaestroById, putMaestro, maestroDelete } = require('../controllers/maestro.controller');
+const { validarJWT } = require('../middlewares/validar-jwt');
+const { tieneRoleAutorizado } = require('../middlewares/validar-roles');
 
 const router = Router();
 
@@ -20,6 +22,8 @@ router.get(
 router.put(
     "/:id",
     [
+        validarJWT,
+        tieneRoleAutorizado('TEACHER_ROLE'),
         check('id', 'No es un id valido').isMongoId(),
         check('id').custom(existeMaestroById),
         check("correo", "Este no es un correo valido").isEmail(),
@@ -44,6 +48,8 @@ router.post(
 router.delete(
     "/:id",
     [
+        validarJWT,
+        tieneRoleAutorizado('TEACHER_ROLE'),
         check('id', 'no es un id valido').isMongoId(),
         check('id').custom(existeMaestroById),
         validarCampos
