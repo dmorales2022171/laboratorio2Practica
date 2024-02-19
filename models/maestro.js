@@ -1,25 +1,23 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const maestroSchema = Schema({
     nombre:{
         type: String,
-        required: [true, 'el nombre es obligatorio']
+        required: [true, 'El nombre es obligatorio']
     },
     correo:{
         type: String,
-        required: [true, 'el correo es obligatorio'],
+        required: [true, 'El correo es obligatorio'],
         unique: true
     },
     password:{
         type: String,
-        required: [true,'la contraseña es obligatoria']
+        required: [true,'La contraseña es obligatoria']
     },
-    curso:{
-       // type: Schema.Types.ObjectId,  //referencia a un documento de otro schema (curso)
-        //ref: "Curso"                   //nombre del schema al que se hace refer
-        type: String,
-        required: [true, 'el curso es obligatorio']
-    },
+    cursos: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Curso'
+    }],
     role:{
         type: String,
         require: true,
@@ -29,8 +27,6 @@ const maestroSchema = Schema({
         type: Boolean,
         default: true
     }
-
-    
 });
 
 maestroSchema.methods.toJSON = function(){

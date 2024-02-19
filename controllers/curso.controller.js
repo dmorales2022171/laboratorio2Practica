@@ -1,5 +1,7 @@
 const Curso = require('../models/curso');
+const Alumno = require('../models/alumno');
 const { response } = require('express');
+const mongoose = require('mongoose');
 
 const cursoGet = async (req, res = response) => {
     const { limite, desde } = req.query;
@@ -29,27 +31,47 @@ const getCursoById = async (req, res) => {
 
 const putCurso = async (req, res = response) => {
     const { id } = req.params;
-    const { nombre, descripcion } = req.body;
+    const { nombre, descripcion, maestro } = req.body;
 
-    const curso = await Curso.findByIdAndUpdate(id, { nombre, descripcion });
+    try {
+        // Verificar si el ID del maestro es un ObjectId válido
+        if (!mongoose.Types.ObjectId.isValid(maestro)) {
+            return res.status(400).json({ msg: `El ID del maestro '${maestro}' no es válido` });
+        }
 
-    res.status(200).json({
-        msg: 'Se actualizó el curso',
-        curso
-    });
-}
+        const curso = await Curso.findByIdAndUpdate(id, { nombre, descripcion, maestro }, { new: true });
 
+        if (!curso) {
+            return res.status(404).json({ msg: 'Curso no encontrado' });
+        }
+
+        res.status(200).json({ msg: 'Curso actualizado correctamente', curso });
+    } catch (error) {
+        console.error(error);
+        if (error instanceof mongoose.Error.CastError) {
+            return res.status(400).json({ msg: 'Error de casting: los valores proporcionados no son válidos' });
+        }
+        res.status(500).json({ msg: 'Error interno del servidor' });
+    }
+};
 const cursoDelete = async (req, res) => {
     const { id } = req.params;
-    const curso = await Curso.findByIdAndUpdate(id, { estado: false });
-    const cursoAutenicado = req.curso;
 
-    res.status(200).json({
-        msg: 'curso eliminado',
-        curso,
-        cursoAutenicado
-    })
-}
+    try {
+        const curso = await Curso.findByIdAndDelete(id);
+
+        if (!curso) {
+            return res.status(404).json({ msg: 'Curso no encontrado' });
+        }
+
+        await Alumno.updateMany({ cursos: curso._id }, { $pull: { cursos: curso._id } });
+
+        res.status(200).json({ msg: 'Curso eliminado correctamente', curso });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Error interno del servidor' });
+    }
+};
 
 
 const cursoPost = async (req, res) => {

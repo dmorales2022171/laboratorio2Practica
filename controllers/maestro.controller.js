@@ -1,5 +1,6 @@
 const bcryptjs = require('bcryptjs');
 const Maestro = require('../models/maestro');
+const Curso = require('../models/curso')
 const { response } = require('express');
 
 const maestroGet = async (req, res = response) => {
@@ -60,17 +61,36 @@ const maestroDelete = async (req, res) => {
 }
 
 const maestroPost = async (req, res) => {
-    const { nombre, correo, password, curso, role } = req.body;
-    const maestro = new Maestro({ nombre, correo, password, curso, role });
+    const { nombre, correo, password, role, cursos } = req.body;
 
-    const salt = bcryptjs.genSaltSync();
-    maestro.password = bcryptjs.hashSync(password, salt);
+    try {
+        if (!cursos || cursos.length > 3) {
+            return res.status(400).json({ msg: 'No se puede asignar más de 3 cursos' });
+        }
 
-    await maestro.save();
-    res.status(202).json({
-        maestro
-    });
-}
+        const cursosEncontrados = await Curso.find({ _id: { $in: cursos } });
+
+        if (cursosEncontrados.length !== cursos.length) {
+            return res.status(400).json({ msg: 'Uno o más cursos no existen' });
+        }
+
+        const maestro = new Maestro({ nombre, correo, password, role, cursos: cursosEncontrados.map(curso => curso._id) });
+
+        const salt = bcryptjs.genSaltSync();
+        maestro.password = bcryptjs.hashSync(password, salt);
+
+        await maestro.save();
+        
+        res.status(202).json({
+            maestro,
+            cursos: cursosEncontrados.map(curso => ({ id: curso._id, nombre: curso.nombre }))
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Error interno del servidor' });
+    }
+};
+
 
 module.exports = {
     maestroPost,
