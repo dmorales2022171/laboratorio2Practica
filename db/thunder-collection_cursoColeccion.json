@@ -1,0 +1,104 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cursoColeccion",
+    "dateExported": "2024-02-19T00:09:27.984Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "eb6ca212-f683-43de-a3db-fd294e853c81",
+            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "containerId": "",
+            "name": "cursoPost",
+            "url": "http://localhost:3000/api/cursos",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-18T09:40:42.367Z",
+            "modified": "2024-02-19T00:07:59.683Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgzMDEyMzYsImV4cCI6MTcwODMwNDgzNn0.Mka3BYzdP0yzwigtrTWNymO_j2BVswVvmTKRH0smqCQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Matemáticas asd\",\n  \"descripcion\": \"Curso de matemáticas avanzadas para estudiantes de ingeniería\",\n  \"maestro\": \"65d26ca6abe1f68d9bb72d4f\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6458caa0-90a5-4096-9a1b-4f38c2a2d3d9",
+            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "containerId": "",
+            "name": "curso get",
+            "url": "http://localhost:3000/api/cursos",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-18T10:45:33.563Z",
+            "modified": "2024-02-18T10:45:40.665Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2fb504c8-29bb-4978-b340-dfd6896fd481",
+            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "containerId": "",
+            "name": "cursos get by id",
+            "url": "http://localhost:3000/api/cursos/65d1ef561c6fcfa30b7ecd1a",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-18T10:52:40.456Z",
+            "modified": "2024-02-18T11:52:10.908Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "11d5350a-af60-478d-9e74-5468a0f16c88",
+            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "containerId": "",
+            "name": "put curso",
+            "url": "http://localhost:3000/api/cursos/65d1ef561c6fcfa30b7ecd1a",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-18T11:25:59.945Z",
+            "modified": "2024-02-19T00:08:20.581Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgzMDEyMzYsImV4cCI6MTcwODMwNDgzNn0.Mka3BYzdP0yzwigtrTWNymO_j2BVswVvmTKRH0smqCQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"pan\",\n  \"descripcion\": \"pan\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3209a654-5cea-46f8-804d-f97e910ad847",
+            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "containerId": "",
+            "name": "curso delete",
+            "url": "http://localhost:3000/api/cursos/65d1ef561c6fcfa30b7ecd1a",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-18T12:25:34.861Z",
+            "modified": "2024-02-19T00:08:37.851Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgzMDEyMzYsImV4cCI6MTcwODMwNDgzNn0.Mka3BYzdP0yzwigtrTWNymO_j2BVswVvmTKRH0smqCQ"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "auth login",
-    "dateExported": "2024-02-17T08:30:41.294Z",
+    "dateExported": "2024-02-19T00:09:52.078Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,7 +14,7 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-02-17T06:01:21.934Z",
-            "modified": "2024-02-17T08:20:06.001Z",
+            "modified": "2024-02-18T23:00:38.736Z",
             "headers": [],
             "params": [],
             "body": {

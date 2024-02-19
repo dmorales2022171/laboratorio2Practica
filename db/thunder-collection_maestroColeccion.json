@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "maestroColeccion",
-    "dateExported": "2024-02-17T04:25:46.252Z",
+    "dateExported": "2024-02-19T00:10:01.210Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-17T03:58:58.582Z",
-            "modified": "2024-02-17T04:04:34.085Z",
+            "modified": "2024-02-18T20:46:18.638Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Mayen\",\n  \"correo\": \"mayen@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"curso\": \"Literatura\",\n  \"role\": \"TEACHER_ROLE\"\n}",
+                "raw": "{\n  \"nombre\": \"asd\",\n  \"correo\": \"asd@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"curso\": \"Literatura\",\n  \"role\": \"TEACHER_ROLE\"\n}",
                 "form": []
             },
             "tests": []
@@ -43,11 +43,11 @@
             "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
             "containerId": "",
             "name": "maestroById",
-            "url": "http://localhost:3000/api/maestros/65cd44537a82743ca587af0b",
+            "url": "http://localhost:3000/api/maestros/65d04f02bb66f0b727a14673",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-02-17T03:58:58.586Z",
-            "modified": "2024-02-17T03:58:58.586Z",
+            "modified": "2024-02-18T19:52:06.031Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -57,12 +57,17 @@
             "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
             "containerId": "",
             "name": "maestroPut",
-            "url": "http://localhost:3000/api/maestros/65d030517f514c2310e6e738",
+            "url": "http://localhost:3000/api/maestros/65d04f02bb66f0b727a14673",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-02-17T03:58:58.587Z",
-            "modified": "2024-02-17T04:07:49.580Z",
-            "headers": [],
+            "modified": "2024-02-18T23:05:33.137Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgyOTc1MTcsImV4cCI6MTcwODMwMTExN30.sOoZkh8fgGfwEqYaLvayfhnYhH8RbWrX0O3Yc607zx4"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
@@ -76,12 +81,17 @@
             "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
             "containerId": "",
             "name": "maestro delete",
-            "url": "http://localhost:3000/api/maestros/65d030517f514c2310e6e738",
+            "url": "http://localhost:3000/api/maestros/65d04f02bb66f0b727a14673",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-02-17T04:14:54.606Z",
-            "modified": "2024-02-17T04:15:19.044Z",
-            "headers": [],
+            "modified": "2024-02-18T23:01:58.241Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgyOTcyMzgsImV4cCI6MTcwODMwMDgzOH0.9p4256D3frl9Q5Voyg0MLrgwUciuL0TDztEK7j5jjHc"
+                }
+            ],
             "params": [],
             "tests": []
         }
