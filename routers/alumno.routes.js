@@ -31,7 +31,6 @@ router.put(
         check('id').custom(existeAlumnoById),
         check("correo", "Este no es un correo valido").isEmail(),
         check("correo").custom(existenteEmail),
-        check("role").custom(esRoleValido),
         validarCampos
     ], putAlumno
 );

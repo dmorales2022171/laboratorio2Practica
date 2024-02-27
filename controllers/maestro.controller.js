@@ -49,40 +49,40 @@ const getMaestroById = async (req, res) => {
 
 const putMaestro = async (req, res = response) => {
     const { id } = req.params;
-    const { _id, password, cursos, ...resto } = req.body;
+    const { password, cursos, ...resto } = req.body;
 
-    if (password) {
-        const salt = bcryptjs.genSaltSync();
-        resto.password = bcryptjs.hashSync(password, salt);
-    }
+    try {
+        if (password) {
+            const salt = bcryptjs.genSaltSync();
+            resto.password = bcryptjs.hashSync(password, salt);
+        }
 
-    if (cursos) {
-        try {
-            const cursosEncontrados = await Curso.find({ _id: { $in: cursos } });
+        if (cursos) {
+            const cursosEncontrados = await Curso.find({ nombre: { $in: cursos } });
 
             if (cursosEncontrados.length !== cursos.length) {
                 return res.status(400).json({ msg: 'Uno o más cursos no existen' });
             }
 
             resto.cursos = cursosEncontrados.map(curso => curso._id);
-        } catch (error) {
-            console.error(error);
-            return res.status(500).json({ msg: 'Error interno del servidor' });
         }
-    }
 
-    try {
         await Maestro.findByIdAndUpdate(id, resto);
-        const maestro = await Maestro.findById({ _id: id });
+        const maestro = await Maestro.findById(id).populate('cursos', 'nombre');
+
+        const cursosActualizados = maestro.cursos.map(curso => curso.nombre);
+
         res.status(200).json({
             msg: 'Se han realizado los cambios correctamente',
-            maestro
+            maestro,
+            cursosActualizados
         });
     } catch (error) {
         console.error(error);
         res.status(500).json({ msg: 'Error interno del servidor' });
     }
-}
+};
+
 
 
 const maestroDelete = async (req, res) => {

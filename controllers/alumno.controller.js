@@ -48,22 +48,51 @@ const getAlumnoById = async (req, res) => {
 }
 const putAlumno = async (req, res = response) => {
     const { id } = req.params;
-    const { _id, password, ...resto } = req.body; 
+    const { password, cursos, ...resto } = req.body;
 
-    if (password) {
-        const salt = bcryptjs.genSaltSync();
-        resto.password = bcryptjs.hashSync(password, salt);
+    try {
+        if (cursos && cursos.length > 3) {
+            return res.status(400).json({ msg: 'No se puede inscribir en más de 3 cursos' });
+        }
+
+        const cursosUnicos = cursos ? [...new Set(cursos)] : [];
+        if (cursos && cursos.length !== cursosUnicos.length) {
+            return res.status(400).json({ msg: 'No se puede inscribir en el mismo curso varias veces' });
+        }
+
+        const cursosIds = [];
+        const cursosNombres = [];
+        if (cursos) {
+            for (const cursoNombre of cursos) {
+                const curso = await Curso.findOne({ nombre: cursoNombre });
+                if (!curso) {
+                    return res.status(400).json({ msg: `El curso '${cursoNombre}' no existe` });
+                }
+                cursosIds.push(curso._id);
+                cursosNombres.push(curso.nombre);
+            }
+        }
+
+        if (password) {
+            const salt = bcryptjs.genSaltSync();
+            resto.password = bcryptjs.hashSync(password, salt);
+        }
+
+        await Alumno.findByIdAndUpdate(id, { ...resto, cursos: cursosIds });
+
+        const alumno = await Alumno.findOne({ _id: id });
+
+        res.status(200).json({
+            msg: 'Se actualizó el perfil del alumno correctamente',
+            alumno,
+            cursosActualizados: cursosNombres
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Error interno del servidor' });
     }
+};
 
-    await Alumno.findByIdAndUpdate(id, resto);
-
-    const alumno = await Alumno.findOne({ _id: id }); 
-
-    res.status(200).json({
-        msg: 'Se actualizó su perfil',
-        alumno
-    });
-}
 
 const alumnoDelete = async (req, res) =>{
     const {id} = req.params;
