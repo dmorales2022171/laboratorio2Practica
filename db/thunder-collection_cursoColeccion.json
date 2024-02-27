@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "cursoColeccion",
-    "dateExported": "2024-02-19T00:09:27.984Z",
+    "dateExported": "2024-02-27T17:13:09.157Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,17 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-18T09:40:42.367Z",
-            "modified": "2024-02-19T00:07:59.683Z",
+            "modified": "2024-02-27T16:11:48.329Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgzMDEyMzYsImV4cCI6MTcwODMwNDgzNn0.Mka3BYzdP0yzwigtrTWNymO_j2BVswVvmTKRH0smqCQ"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyZDc0M2E4M2U0ZDdiZjk1OTY5OGMiLCJpYXQiOjE3MDgzMjE4MTEsImV4cCI6MTcwODMyNTQxMX0.kW4uX6yWPSEnB0_bDU4ASKB730FnKFWIwtmqpyKPwEE"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Matemáticas asd\",\n  \"descripcion\": \"Curso de matemáticas avanzadas para estudiantes de ingeniería\",\n  \"maestro\": \"65d26ca6abe1f68d9bb72d4f\"\n}",
+                "raw": "{\n  \"nombre\": \"Pratica\",\n  \"descripcion\": \"practicass\"\n}",
                 "form": []
             },
             "tests": []
@@ -48,11 +48,11 @@
             "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
             "containerId": "",
             "name": "cursos get by id",
-            "url": "http://localhost:3000/api/cursos/65d1ef561c6fcfa30b7ecd1a",
+            "url": "http://localhost:3000/api/cursos/65d29bc28234d3b9b4f2a541",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-02-18T10:52:40.456Z",
-            "modified": "2024-02-18T11:52:10.908Z",
+            "modified": "2024-02-19T05:50:49.943Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -62,21 +62,21 @@
             "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
             "containerId": "",
             "name": "put curso",
-            "url": "http://localhost:3000/api/cursos/65d1ef561c6fcfa30b7ecd1a",
+            "url": "http://localhost:3000/api/cursos/65d29bc28234d3b9b4f2a541",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-02-18T11:25:59.945Z",
-            "modified": "2024-02-19T00:08:20.581Z",
+            "modified": "2024-02-19T05:51:33.285Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgzMDEyMzYsImV4cCI6MTcwODMwNDgzNn0.Mka3BYzdP0yzwigtrTWNymO_j2BVswVvmTKRH0smqCQ"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyZDc0M2E4M2U0ZDdiZjk1OTY5OGMiLCJpYXQiOjE3MDgzMTkwNDcsImV4cCI6MTcwODMyMjY0N30.FvJqlQNAtjsd15WjuIAQq59F7l7kDLPSaRdfsXIV0_A"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"pan\",\n  \"descripcion\": \"pan\"\n}",
+                "raw": "{\n    \"nombre\": \"put\",\n    \"descripcion\": \"actualizar\",\n    \"maestro\": \"65d2dee3a1c7128d8c23e1c8\"\n}",
                 "form": []
             },
             "tests": []
@@ -86,15 +86,15 @@
             "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
             "containerId": "",
             "name": "curso delete",
-            "url": "http://localhost:3000/api/cursos/65d1ef561c6fcfa30b7ecd1a",
+            "url": "http://localhost:3000/api/cursos/65dd80550a40ba4f4e2ba151",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-02-18T12:25:34.861Z",
-            "modified": "2024-02-19T00:08:37.851Z",
+            "modified": "2024-02-27T17:10:20.125Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgzMDEyMzYsImV4cCI6MTcwODMwNDgzNn0.Mka3BYzdP0yzwigtrTWNymO_j2BVswVvmTKRH0smqCQ"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkODBhODBhNDBiYTRmNGUyYmExNTgiLCJpYXQiOjE3MDkwNTA0OTAsImV4cCI6MTcwOTA1NDA5MH0.s5qrQjulXlSQsBSGahkRhHlzsM9-h1Sx5jIg-uTtwCg"
                 }
             ],
             "params": [],

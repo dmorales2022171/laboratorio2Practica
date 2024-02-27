@@ -31,22 +31,41 @@ const getMaestroById = async (req, res) => {
 
 const putMaestro = async (req, res = response) => {
     const { id } = req.params;
-    const { _id, password, ...resto } = req.body;
+    const { _id, password, cursos, ...resto } = req.body;
 
     if (password) {
         const salt = bcryptjs.genSaltSync();
         resto.password = bcryptjs.hashSync(password, salt);
     }
 
-    await Maestro.findByIdAndUpdate(id, resto);
+    if (cursos) {
+        try {
+            const cursosEncontrados = await Curso.find({ _id: { $in: cursos } });
 
-    const maestro = await Maestro.findOne({ _id: id });
+            if (cursosEncontrados.length !== cursos.length) {
+                return res.status(400).json({ msg: 'Uno o más cursos no existen' });
+            }
 
-    res.status(200).json({
-        msg: 'se hizo cambios',
-        maestro
-    });
+            resto.cursos = cursosEncontrados.map(curso => curso._id);
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ msg: 'Error interno del servidor' });
+        }
+    }
+
+    try {
+        await Maestro.findByIdAndUpdate(id, resto);
+        const maestro = await Maestro.findById({_id: id});
+        res.status(200).json({
+            msg: 'Se han realizado los cambios correctamente',
+            maestro
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Error interno del servidor' });
+    }
 }
+
 
 const maestroDelete = async (req, res) => {
     const { id } = req.params;
@@ -80,7 +99,7 @@ const maestroPost = async (req, res) => {
         maestro.password = bcryptjs.hashSync(password, salt);
 
         await maestro.save();
-        
+
         res.status(202).json({
             maestro,
             cursos: cursosEncontrados.map(curso => ({ id: curso._id, nombre: curso.nombre }))

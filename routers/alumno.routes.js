@@ -40,13 +40,11 @@ router.put(
 router.post(
     "/",
     [
-        validarJWT,
-        tieneRoleAutorizado('STUDENT_ROLE'),
         check("nombre", "El nombre no puede estar vacío").not().isEmpty(),
         check("password", "La contraseña debe tener al menos 6 caracteres").isLength({ min: 6 }),
         check("correo", "Correo no válido").isEmail(),
-        check("cursos", "El campo 'cursos' debe ser un arreglo de IDs").isArray(), // Validar que 'cursos' sea un arreglo
-        check("cursos.*", "El ID del curso no es válido").isMongoId(), // Validar IDs de cursos en el arreglo
+        check("cursos", "El campo 'cursos' debe ser un arreglo de IDs").isArray(), 
+        check("cursos.*", "El ID del curso no es válido").isMongoId(), 
         validarCampos
     ],
     alumnoPost

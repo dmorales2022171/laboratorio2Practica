@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "alumnoColeccion",
-    "dateExported": "2024-02-19T00:09:42.682Z",
+    "dateExported": "2024-02-27T17:13:01.610Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-17T07:30:52.382Z",
-            "modified": "2024-02-18T20:04:23.091Z",
-            "headers": [],
+            "modified": "2024-02-27T16:05:26.591Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjJjNjI2MzgzNmVjMGEwZjdlYjMiLCJpYXQiOjE3MDgzMjE1OTAsImV4cCI6MTcwODMyNTE5MH0.ohRec2nC9pVHEbt7Y7Cp5OverniwqgvmuSJKHMa9RD4"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"mama\",\n  \"correo\": \"mama@kina.edu.gt\",\n  \"password\": \"123456\",\n  \"role\": \"STUDENT_ROLE\",\n  \"curso\": \"Etica\"\n}",
+                "raw": "{\n  \"nombre\": \"Carlos\",\n  \"correo\": \"car@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"role\": \"STUDENT_ROLE\",\n  \"cursos\": [\"65dd80700a40ba4f4e2ba153\", \"65dd80280a40ba4f4e2ba14d\", \"65dd80550a40ba4f4e2ba151\"]\n}\n",
                 "form": []
             },
             "tests": []
@@ -43,21 +48,21 @@
             "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
             "containerId": "",
             "name": "put alumno",
-            "url": "http://localhost:3000/api/alumnos/65d058828900bf2b2ddf82fa",
+            "url": "http://localhost:3000/api/alumnos/65de0828cf2d2b0e6012f476",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-02-17T07:30:52.385Z",
-            "modified": "2024-02-18T22:58:22.261Z",
+            "modified": "2024-02-27T16:12:25.095Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNmNhNmFiZTFmNjhkOWJiNzJkNGYiLCJpYXQiOjE3MDgyOTY2ODYsImV4cCI6MTcwODMwMDI4Nn0.BtW1dduxiUTAYAjePbddfTnhrk4wWJc_szoD7GN7gAo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlMDdmYmNmMmQyYjBlNjAxMmY0NzEiLCJpYXQiOjE3MDkwNDk4NzUsImV4cCI6MTcwOTA1MzQ3NX0.cL7TN3lwTUn2N-3naK7btwUJqcKb6ScAuKJVqWpYxgI"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Palma\",\n  \"correo\": \"apalma-2022125@kinal.edu.gt\",\n  \"password\": \"166584\",\n  \"role\": \"STUDENT_ROLE\"\n}",
+                "raw": "{\n  \"nombre\": \"Fernando\",\n  \"correo\": \"fer@kinal.edu.gt\",\n  \"passord\": \"123456\",\n  \"role\": \"STUDENT_ROLE\",\n  \"cursos\": [\"65de09c44fa5f5c873229b35\", \"65dd80700a40ba4f4e2ba153\", \"65dd80550a40ba4f4e2ba151\"]\n}",
                 "form": []
             },
             "tests": []
@@ -67,11 +72,11 @@
             "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
             "containerId": "",
             "name": "get by id alumno",
-            "url": "http://localhost:3000/api/alumnos/65d058a38900bf2b2ddf82fe",
+            "url": "http://localhost:3000/api/alumnos/65de0502755a80cf2b877bf5",
             "method": "GET",
             "sortNum": 50000,
             "created": "2024-02-17T07:30:52.386Z",
-            "modified": "2024-02-17T07:31:18.916Z",
+            "modified": "2024-02-27T15:54:09.135Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -81,15 +86,15 @@
             "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
             "containerId": "",
             "name": "delete alumno",
-            "url": "http://localhost:3000/api/alumnos/65d058828900bf2b2ddf82fa",
+            "url": "http://localhost:3000/api/alumnos/65de0846cf2d2b0e6012f479",
             "method": "DELETE",
             "sortNum": 60000,
             "created": "2024-02-17T07:30:52.388Z",
-            "modified": "2024-02-18T22:51:33.980Z",
+            "modified": "2024-02-27T16:14:21.398Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNmNhNmFiZTFmNjhkOWJiNzJkNGYiLCJpYXQiOjE3MDgyOTY2ODYsImV4cCI6MTcwODMwMDI4Nn0.BtW1dduxiUTAYAjePbddfTnhrk4wWJc_szoD7GN7gAo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlMDdmYmNmMmQyYjBlNjAxMmY0NzEiLCJpYXQiOjE3MDkwNDk4NzUsImV4cCI6MTcwOTA1MzQ3NX0.cL7TN3lwTUn2N-3naK7btwUJqcKb6ScAuKJVqWpYxgI"
                 }
             ],
             "params": [],

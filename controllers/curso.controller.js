@@ -1,5 +1,6 @@
 const Curso = require('../models/curso');
 const Alumno = require('../models/alumno');
+const Maestro = require('../models/maestro')
 const { response } = require('express');
 const mongoose = require('mongoose');
 
@@ -34,7 +35,6 @@ const putCurso = async (req, res = response) => {
     const { nombre, descripcion, maestro } = req.body;
 
     try {
-        // Verificar si el ID del maestro es un ObjectId válido
         if (!mongoose.Types.ObjectId.isValid(maestro)) {
             return res.status(400).json({ msg: `El ID del maestro '${maestro}' no es válido` });
         }
@@ -65,6 +65,7 @@ const cursoDelete = async (req, res) => {
         }
 
         await Alumno.updateMany({ cursos: curso._id }, { $pull: { cursos: curso._id } });
+        await Maestro.updateMany({ cursos: curso._id }, { $pull: { cursos: curso._id } });
 
         res.status(200).json({ msg: 'Curso eliminado correctamente', curso });
     } catch (error) {
@@ -75,8 +76,8 @@ const cursoDelete = async (req, res) => {
 
 
 const cursoPost = async (req, res) => {
-    const { nombre, descripcion, maestro } = req.body;
-    const curso = new Curso({ nombre, descripcion, maestro });
+    const { nombre, descripcion, } = req.body;
+    const curso = new Curso({ nombre, descripcion});
 
     await curso.save();
     res.status(202).json({

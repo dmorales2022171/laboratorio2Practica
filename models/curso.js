@@ -9,11 +9,6 @@ const cursoSchema = Schema({
         type: String,
         required: [true, 'la descripcion es obligatoria']
     },
-    maestro: {
-        type: Schema.Types.ObjectId,
-        ref: 'Maestro',
-        required: [true, 'el profesor es obligatorio']
-    },
     estado: {
         type: Boolean,
         default: true

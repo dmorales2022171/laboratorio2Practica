@@ -32,7 +32,7 @@ const getAlumnoById = async (req, res) =>{
 
 const putAlumno = async (req, res = response) => {
     const { id } = req.params;
-    const { _id, password, ...resto } = req.body; // Asegúrate de incluir password aquí
+    const { _id, password, ...resto } = req.body; 
 
     if (password) {
         const salt = bcryptjs.genSaltSync();
@@ -41,7 +41,7 @@ const putAlumno = async (req, res = response) => {
 
     await Alumno.findByIdAndUpdate(id, resto);
 
-    const alumno = await Alumno.findOne({ _id: id }); // Cambia id por _id
+    const alumno = await Alumno.findOne({ _id: id }); 
 
     res.status(200).json({
         msg: 'Se actualizó su perfil',
@@ -74,9 +74,15 @@ const alumnoPost = async (req, res) => {
         if (cursos.length !== cursosUnicos.length) {
             return res.status(400).json({ msg: 'No se puede inscribir en el mismo curso varias veces' });
         }
-        const alumno = new Alumno({ nombre, correo, password, role, cursos });
+
+        const salt = bcryptjs.genSaltSync();
+        const hashedPassword = bcryptjs.hashSync(password, salt);
+        const alumno = new Alumno({ nombre, correo, password: hashedPassword, role, cursos });
+        
         await alumno.save();
+
         const cursosAlumno = await Curso.find({ _id: { $in: cursos } }, 'nombre');
+        
         res.status(202).json({
             alumno,
             cursos: cursosAlumno.map(curso => curso.nombre)
@@ -86,6 +92,7 @@ const alumnoPost = async (req, res) => {
         res.status(500).json({ msg: 'Error interno del servidor' });
     }
 }
+
 
 
 

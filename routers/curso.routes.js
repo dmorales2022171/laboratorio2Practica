@@ -33,11 +33,8 @@ router.put(
 router.post(
     "/",
     [
-        validarJWT,
-        tieneRoleAutorizado('TEACHER_ROLE'),
         check("nombre", "el nombre del curso no debe ir vacío").not().isEmpty(),
         check("descripcion", "la descripción del curso no debe ir vacía").not().isEmpty(),
-        check("maestro", "el ID del profesor es obligatorio").not().isEmpty(), // Validar campo maestro
         validarCampos
     ],
     cursoPost

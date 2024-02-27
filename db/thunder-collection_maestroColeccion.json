@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "maestroColeccion",
-    "dateExported": "2024-02-19T00:10:01.210Z",
+    "dateExported": "2024-02-27T17:12:40.479Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-17T03:58:58.582Z",
-            "modified": "2024-02-18T20:46:18.638Z",
-            "headers": [],
+            "modified": "2024-02-27T06:36:01.932Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNmNhNmFiZTFmNjhkOWJiNzJkNGYiLCJpYXQiOjE3MDgzMjExNjksImV4cCI6MTcwODMyNDc2OX0.7SvzVYsIICwcaMi_7BWQwuMUx2PJY-B_Po2_lcyUz80"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"asd\",\n  \"correo\": \"asd@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"curso\": \"Literatura\",\n  \"role\": \"TEACHER_ROLE\"\n}",
+                "raw": "{\n    \"nombre\": \"Mario Ortiz\",\n    \"correo\": \"mario@example.com\",\n    \"password\": \"123456\",\n    \"role\": \"TEACHER_ROLE\",\n    \"cursos\": [\"65dd80700a40ba4f4e2ba153\", \"65dd80550a40ba4f4e2ba151\", \"65dd80390a40ba4f4e2ba14f\"]\n}\n",
                 "form": []
             },
             "tests": []
@@ -43,11 +48,11 @@
             "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
             "containerId": "",
             "name": "maestroById",
-            "url": "http://localhost:3000/api/maestros/65d04f02bb66f0b727a14673",
+            "url": "http://localhost:3000/api/maestros/65dd80a80a40ba4f4e2ba158",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-02-17T03:58:58.586Z",
-            "modified": "2024-02-18T19:52:06.031Z",
+            "modified": "2024-02-27T06:35:15.237Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -57,21 +62,21 @@
             "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
             "containerId": "",
             "name": "maestroPut",
-            "url": "http://localhost:3000/api/maestros/65d04f02bb66f0b727a14673",
+            "url": "http://localhost:3000/api/maestros/65dd80a80a40ba4f4e2ba158",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-02-17T03:58:58.587Z",
-            "modified": "2024-02-18T23:05:33.137Z",
+            "modified": "2024-02-27T15:02:16.314Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgyOTc1MTcsImV4cCI6MTcwODMwMTExN30.sOoZkh8fgGfwEqYaLvayfhnYhH8RbWrX0O3Yc607zx4"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkODBhODBhNDBiYTRmNGUyYmExNTgiLCJpYXQiOjE3MDkwNDYwOTIsImV4cCI6MTcwOTA0OTY5Mn0.jKHTxxw0KNsKQYNEyfZJJ9HGzp8HjY08op0IfXko_nw"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"luis\",\n  \"correo\": \"lis@kinal.edu.gt\",\n  \"password\": \"455555\",\n  \"role\": \"STUDENT_ROLE\",\n  \"curso\": \"nose\"\n}",
+                "raw": "{\r\n  \"nombre\": \"morales\",\r\n  \"correo\": \"dmorales@kinal.edu.gt\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"TEACHER_ROLE\",\r\n  \"cursos\": [\"65dd80280a40ba4f4e2ba14d\", \"65dd80390a40ba4f4e2ba14f\", \"65dd80700a40ba4f4e2ba153\"]\r\n}\r\n",
                 "form": []
             },
             "tests": []
@@ -81,15 +86,15 @@
             "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
             "containerId": "",
             "name": "maestro delete",
-            "url": "http://localhost:3000/api/maestros/65d04f02bb66f0b727a14673",
+            "url": "http://localhost:3000/api/maestros/65dd82d1282988ba5b2d9670",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-02-17T04:14:54.606Z",
-            "modified": "2024-02-18T23:01:58.241Z",
+            "modified": "2024-02-27T06:45:22.681Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwNThhMzg5MDBiZjJiMmRkZjgyZmUiLCJpYXQiOjE3MDgyOTcyMzgsImV4cCI6MTcwODMwMDgzOH0.9p4256D3frl9Q5Voyg0MLrgwUciuL0TDztEK7j5jjHc"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkODBhODBhNDBiYTRmNGUyYmExNTgiLCJpYXQiOjE3MDkwMTUyNzgsImV4cCI6MTcwOTAxODg3OH0.xRAmUDddk3MjdxLIIQy1pg8NUUzOottY0Vd19B3r02o"
                 }
             ],
             "params": [],
