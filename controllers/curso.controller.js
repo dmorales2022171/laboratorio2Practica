@@ -73,15 +73,26 @@ const cursoDelete = async (req, res) => {
 
 
 const cursoPost = async (req, res) => {
-    const { nombre, descripcion, } = req.body;
-    const curso = new Curso({ nombre, descripcion});
+    const { nombre, descripcion } = req.body;
 
-    if(curso)
-    await curso.save();
-    res.status(202).json({
-        curso
-    });
+    try {
+        const cursoExistente = await Curso.findOne({ nombre });
+
+        if (cursoExistente) {
+            return res.status(400).json({
+                msg: 'El curso ya existe'
+            });
+        }
+        const curso = new Curso({ nombre, descripcion });
+        await curso.save();
+
+        res.status(202).json({ curso });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Error interno del servidor' });
+    }
 };
+
 
 module.exports = {
     cursoPost,

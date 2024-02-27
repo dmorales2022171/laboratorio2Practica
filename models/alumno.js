@@ -16,8 +16,6 @@ const AlumnoSchema = Schema({
     },
     role:{
         type: String,
-        required: true,
-        enum: ["STUDENT_ROLE"],
         default: "STUDENT_ROLE"
     },
     cursos: [{
