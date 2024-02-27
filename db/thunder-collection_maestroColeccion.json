@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "maestroColeccion",
-    "dateExported": "2024-02-27T17:12:40.479Z",
+    "dateExported": "2024-02-27T23:23:21.645Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "ac7b6be4-fcb4-4beb-88b3-746b6e9c3a49",
-            "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
+            "_id": "58d5e377-801a-48ec-bf11-b05e2b1c423d",
+            "colId": "ac727618-8e9a-4f65-9abc-d4b0cc1d29f1",
             "containerId": "",
             "name": "maestroPost",
             "url": "http://localhost:3000/api/maestros",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-17T03:58:58.582Z",
-            "modified": "2024-02-27T06:36:01.932Z",
+            "created": "2024-02-27T19:03:33.720Z",
+            "modified": "2024-02-27T22:49:42.247Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -24,73 +24,73 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"nombre\": \"Mario Ortiz\",\n    \"correo\": \"mario@example.com\",\n    \"password\": \"123456\",\n    \"role\": \"TEACHER_ROLE\",\n    \"cursos\": [\"65dd80700a40ba4f4e2ba153\", \"65dd80550a40ba4f4e2ba151\", \"65dd80390a40ba4f4e2ba14f\"]\n}\n",
+                "raw": "{\n    \"nombre\": \"palma\",\n    \"correo\": \"palma@kinal.edu.gt\",\n    \"password\": \"123456\",\n    \"cursos\": [\"Emprendimiento\", \"Taller\", \"prueba\"]\n}\n",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "0100d1fc-6efe-4bbe-b22c-12442ac65c06",
-            "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
+            "_id": "36a1dbc8-a53c-4b6a-9f24-5ee7f9a9f53f",
+            "colId": "ac727618-8e9a-4f65-9abc-d4b0cc1d29f1",
             "containerId": "",
             "name": "maestroGet",
             "url": "http://localhost:3000/api/maestros",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-17T03:58:58.585Z",
-            "modified": "2024-02-17T03:58:58.585Z",
+            "created": "2024-02-27T19:03:33.721Z",
+            "modified": "2024-02-27T19:03:33.721Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "4b1556c6-3979-4a0c-825d-3c25ba807798",
-            "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
+            "_id": "07e42b40-136f-47ff-840c-a95ff5570e56",
+            "colId": "ac727618-8e9a-4f65-9abc-d4b0cc1d29f1",
             "containerId": "",
             "name": "maestroById",
-            "url": "http://localhost:3000/api/maestros/65dd80a80a40ba4f4e2ba158",
+            "url": "http://localhost:3000/api/maestros/65de659a15a3295edd2ad9e1",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-02-17T03:58:58.586Z",
-            "modified": "2024-02-27T06:35:15.237Z",
+            "created": "2024-02-27T19:03:33.722Z",
+            "modified": "2024-02-27T22:44:13.936Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "9c34d7a1-e9a1-42d7-8f36-4f68f2fcbd90",
-            "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
+            "_id": "8f0e035a-b614-4451-9a18-cd05287169b5",
+            "colId": "ac727618-8e9a-4f65-9abc-d4b0cc1d29f1",
             "containerId": "",
             "name": "maestroPut",
-            "url": "http://localhost:3000/api/maestros/65dd80a80a40ba4f4e2ba158",
+            "url": "http://localhost:3000/api/maestros/65de659a15a3295edd2ad9e1",
             "method": "PUT",
             "sortNum": 40000,
-            "created": "2024-02-17T03:58:58.587Z",
-            "modified": "2024-02-27T15:02:16.314Z",
+            "created": "2024-02-27T19:03:33.723Z",
+            "modified": "2024-02-27T22:45:40.591Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkODBhODBhNDBiYTRmNGUyYmExNTgiLCJpYXQiOjE3MDkwNDYwOTIsImV4cCI6MTcwOTA0OTY5Mn0.jKHTxxw0KNsKQYNEyfZJJ9HGzp8HjY08op0IfXko_nw"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNjU5YTE1YTMyOTVlZGQyYWQ5ZTEiLCJpYXQiOjE3MDkwNzM4OTQsImV4cCI6MTcwOTA3NzQ5NH0.FWcCocRLRpDwSU964o0g4NaSXQuNWIE7eYI5RSDIVQU"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\r\n  \"nombre\": \"morales\",\r\n  \"correo\": \"dmorales@kinal.edu.gt\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"TEACHER_ROLE\",\r\n  \"cursos\": [\"65dd80280a40ba4f4e2ba14d\", \"65dd80390a40ba4f4e2ba14f\", \"65dd80700a40ba4f4e2ba153\"]\r\n}\r\n",
+                "raw": "{\n  \"nombre\": \"galicia\",\n  \"correo\": \"galicia@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"cursos\": [\"Actuacion\", \"Dibujo\", \"papu\"]\n}\n",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "7faed97b-edbe-4277-922d-667770432872",
-            "colId": "d5e6027d-83d5-459b-bff1-df0516628c73",
+            "_id": "dfa574cd-edb4-48b9-9a45-d4b7f8b54047",
+            "colId": "ac727618-8e9a-4f65-9abc-d4b0cc1d29f1",
             "containerId": "",
             "name": "maestro delete",
             "url": "http://localhost:3000/api/maestros/65dd82d1282988ba5b2d9670",
             "method": "DELETE",
             "sortNum": 50000,
-            "created": "2024-02-17T04:14:54.606Z",
-            "modified": "2024-02-27T06:45:22.681Z",
+            "created": "2024-02-27T19:03:33.724Z",
+            "modified": "2024-02-27T19:03:33.724Z",
             "headers": [
                 {
                     "name": "x-token",

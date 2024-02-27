@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "cursoColeccion",
-    "dateExported": "2024-02-27T17:13:09.157Z",
+    "dateExported": "2024-02-27T23:23:17.405Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "eb6ca212-f683-43de-a3db-fd294e853c81",
-            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "_id": "90b2fb26-f85e-4dc2-aecb-346fbaaf3d60",
+            "colId": "4585fe25-185a-4fc2-956f-5a57c933745d",
             "containerId": "",
             "name": "cursoPost",
             "url": "http://localhost:3000/api/cursos",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-18T09:40:42.367Z",
-            "modified": "2024-02-27T16:11:48.329Z",
+            "created": "2024-02-27T19:03:28.530Z",
+            "modified": "2024-02-27T22:31:05.598Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -24,77 +24,77 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Pratica\",\n  \"descripcion\": \"practicass\"\n}",
+                "raw": "{\n  \"nombre\": \"papu\",\n  \"descripcion\": \"curso de papus\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "6458caa0-90a5-4096-9a1b-4f38c2a2d3d9",
-            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "_id": "d1cdef37-f018-414e-813a-e367e196e308",
+            "colId": "4585fe25-185a-4fc2-956f-5a57c933745d",
             "containerId": "",
             "name": "curso get",
             "url": "http://localhost:3000/api/cursos",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-18T10:45:33.563Z",
-            "modified": "2024-02-18T10:45:40.665Z",
+            "created": "2024-02-27T19:03:28.531Z",
+            "modified": "2024-02-27T19:03:28.531Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "2fb504c8-29bb-4978-b340-dfd6896fd481",
-            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "_id": "12417712-43c3-4db8-86a7-6372571d107c",
+            "colId": "4585fe25-185a-4fc2-956f-5a57c933745d",
             "containerId": "",
             "name": "cursos get by id",
             "url": "http://localhost:3000/api/cursos/65d29bc28234d3b9b4f2a541",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-02-18T10:52:40.456Z",
-            "modified": "2024-02-19T05:50:49.943Z",
+            "created": "2024-02-27T19:03:28.532Z",
+            "modified": "2024-02-27T19:03:28.532Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "11d5350a-af60-478d-9e74-5468a0f16c88",
-            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "_id": "c308a2ee-d11a-46de-bc64-928b83bcf394",
+            "colId": "4585fe25-185a-4fc2-956f-5a57c933745d",
             "containerId": "",
             "name": "put curso",
-            "url": "http://localhost:3000/api/cursos/65d29bc28234d3b9b4f2a541",
+            "url": "http://localhost:3000/api/cursos/65de6267fe7bb47eadeed314",
             "method": "PUT",
             "sortNum": 40000,
-            "created": "2024-02-18T11:25:59.945Z",
-            "modified": "2024-02-19T05:51:33.285Z",
+            "created": "2024-02-27T19:03:28.533Z",
+            "modified": "2024-02-27T22:47:17.216Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyZDc0M2E4M2U0ZDdiZjk1OTY5OGMiLCJpYXQiOjE3MDgzMTkwNDcsImV4cCI6MTcwODMyMjY0N30.FvJqlQNAtjsd15WjuIAQq59F7l7kDLPSaRdfsXIV0_A"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNDU4YWI2MWRmYjM4ZWE4ZTk4MzEiLCJpYXQiOjE3MDkwNzIxMjUsImV4cCI6MTcwOTA3NTcyNX0.H_9KqeLsOrwB1VhURI-WF5V3cBM7j5OmL3ujPdBHMzU"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"nombre\": \"put\",\n    \"descripcion\": \"actualizar\",\n    \"maestro\": \"65d2dee3a1c7128d8c23e1c8\"\n}",
+                "raw": "{\n    \"nombre\": \"put\",\n    \"descripcion\": \"put\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "3209a654-5cea-46f8-804d-f97e910ad847",
-            "colId": "985e3512-307c-47ce-a7d7-f227b84ea01d",
+            "_id": "bec7f32a-174f-4742-a7f5-56500d544c38",
+            "colId": "4585fe25-185a-4fc2-956f-5a57c933745d",
             "containerId": "",
             "name": "curso delete",
-            "url": "http://localhost:3000/api/cursos/65dd80550a40ba4f4e2ba151",
+            "url": "http://localhost:3000/api/cursos/65de55ea2abaf8fa50dac15d",
             "method": "DELETE",
             "sortNum": 50000,
-            "created": "2024-02-18T12:25:34.861Z",
-            "modified": "2024-02-27T17:10:20.125Z",
+            "created": "2024-02-27T19:03:28.534Z",
+            "modified": "2024-02-27T22:10:36.829Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkODBhODBhNDBiYTRmNGUyYmExNTgiLCJpYXQiOjE3MDkwNTA0OTAsImV4cCI6MTcwOTA1NDA5MH0.s5qrQjulXlSQsBSGahkRhHlzsM9-h1Sx5jIg-uTtwCg"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNDU4YWI2MWRmYjM4ZWE4ZTk4MzEiLCJpYXQiOjE3MDkwNzA5ODcsImV4cCI6MTcwOTA3NDU4N30.v26pZmXaJU9TdTb4bjbbsg6Zpv_pIMNp97yK3pVW5eQ"
                 }
             ],
             "params": [],

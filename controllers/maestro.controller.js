@@ -98,7 +98,7 @@ const maestroDelete = async (req, res) => {
 }
 
 const maestroPost = async (req, res) => {
-    const { nombre, correo, password,cursos } = req.body;
+    const { nombre, correo, password, cursos } = req.body;
 
     try {
         if (cursos && cursos.length > 3) {
