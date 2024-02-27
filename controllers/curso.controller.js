@@ -32,14 +32,10 @@ const getCursoById = async (req, res) => {
 
 const putCurso = async (req, res = response) => {
     const { id } = req.params;
-    const { nombre, descripcion, maestro } = req.body;
+    const { nombre, descripcion } = req.body;
 
     try {
-        if (!mongoose.Types.ObjectId.isValid(maestro)) {
-            return res.status(400).json({ msg: `El ID del maestro '${maestro}' no es válido` });
-        }
-
-        const curso = await Curso.findByIdAndUpdate(id, { nombre, descripcion, maestro }, { new: true });
+        const curso = await Curso.findByIdAndUpdate(id, { nombre, descripcion }, { new: true });
 
         if (!curso) {
             return res.status(404).json({ msg: 'Curso no encontrado' });
@@ -54,6 +50,7 @@ const putCurso = async (req, res = response) => {
         res.status(500).json({ msg: 'Error interno del servidor' });
     }
 };
+
 const cursoDelete = async (req, res) => {
     const { id } = req.params;
 
@@ -79,6 +76,7 @@ const cursoPost = async (req, res) => {
     const { nombre, descripcion, } = req.body;
     const curso = new Curso({ nombre, descripcion});
 
+    if(curso)
     await curso.save();
     res.status(202).json({
         curso

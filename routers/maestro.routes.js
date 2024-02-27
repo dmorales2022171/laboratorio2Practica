@@ -40,7 +40,6 @@ router.post(
         check("password", "El password debe ser mayor de 6 caracteres ").isLength({ min: 6 }),
         check("correo", "Correo electronico invalido").isEmail(),
         check("correo").custom(existenteEmail),
-        check("role").custom(esRoleValido),
         validarCampos,
     ], maestroPost
 );

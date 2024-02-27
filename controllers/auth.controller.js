@@ -41,8 +41,7 @@ const login = async (req = request, res = response) => {
         const token = await generarJWT (usuario.id);
         res.status(200).json({
             msg: `Bienvenido ${tipoUsuario} ${usuario.nombre}`,
-            token, 
-            role: usuario.role
+            token,
         });
 
 
