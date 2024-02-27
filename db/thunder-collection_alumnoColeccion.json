@@ -1,0 +1,104 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "alumnoColeccion",
+    "dateExported": "2024-02-27T17:13:01.610Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5c7dba35-9a2e-43f7-8128-c669199eb2b6",
+            "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
+            "containerId": "",
+            "name": "post Alumno",
+            "url": "http://localhost:3000/api/alumnos",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-17T07:30:52.382Z",
+            "modified": "2024-02-27T16:05:26.591Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjJjNjI2MzgzNmVjMGEwZjdlYjMiLCJpYXQiOjE3MDgzMjE1OTAsImV4cCI6MTcwODMyNTE5MH0.ohRec2nC9pVHEbt7Y7Cp5OverniwqgvmuSJKHMa9RD4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Carlos\",\n  \"correo\": \"car@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"role\": \"STUDENT_ROLE\",\n  \"cursos\": [\"65dd80700a40ba4f4e2ba153\", \"65dd80280a40ba4f4e2ba14d\", \"65dd80550a40ba4f4e2ba151\"]\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fd4836ef-c52f-4ca5-ad36-42cdf57c6573",
+            "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
+            "containerId": "",
+            "name": "get alumno",
+            "url": "http://localhost:3000/api/alumnos",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-17T07:30:52.384Z",
+            "modified": "2024-02-17T07:30:52.384Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "54528922-6a8e-4170-9581-2b910644f4bc",
+            "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
+            "containerId": "",
+            "name": "put alumno",
+            "url": "http://localhost:3000/api/alumnos/65de0828cf2d2b0e6012f476",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-17T07:30:52.385Z",
+            "modified": "2024-02-27T16:12:25.095Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlMDdmYmNmMmQyYjBlNjAxMmY0NzEiLCJpYXQiOjE3MDkwNDk4NzUsImV4cCI6MTcwOTA1MzQ3NX0.cL7TN3lwTUn2N-3naK7btwUJqcKb6ScAuKJVqWpYxgI"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Fernando\",\n  \"correo\": \"fer@kinal.edu.gt\",\n  \"passord\": \"123456\",\n  \"role\": \"STUDENT_ROLE\",\n  \"cursos\": [\"65de09c44fa5f5c873229b35\", \"65dd80700a40ba4f4e2ba153\", \"65dd80550a40ba4f4e2ba151\"]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b604a1fc-487f-475a-937d-c8ab06f9a51c",
+            "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
+            "containerId": "",
+            "name": "get by id alumno",
+            "url": "http://localhost:3000/api/alumnos/65de0502755a80cf2b877bf5",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-17T07:30:52.386Z",
+            "modified": "2024-02-27T15:54:09.135Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9cd77072-586b-4ab1-9209-56898b26c427",
+            "colId": "1b6cf31b-464a-4469-8ec6-a5ef640ba6c5",
+            "containerId": "",
+            "name": "delete alumno",
+            "url": "http://localhost:3000/api/alumnos/65de0846cf2d2b0e6012f479",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-02-17T07:30:52.388Z",
+            "modified": "2024-02-27T16:14:21.398Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlMDdmYmNmMmQyYjBlNjAxMmY0NzEiLCJpYXQiOjE3MDkwNDk4NzUsImV4cCI6MTcwOTA1MzQ3NX0.cL7TN3lwTUn2N-3naK7btwUJqcKb6ScAuKJVqWpYxgI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
